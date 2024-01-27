@@ -11,3 +11,17 @@ int main(){
   printf("%d",find(decimal));
   return 0;
 }
+ BINARY TO DECIMAL
+#include<stdio.h>
+int find(int binary){
+    if(binary==0){
+        return 0;
+    }
+    else 
+    return (binary%10+2*find(binary/10));
+}
+int main(){
+    int binary=1010;
+    printf("the decimal value of %d =%d",binary,find(binary));
+    return 0;
+}
