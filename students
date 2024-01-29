@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Define the structure for a student record
+struct Student {
+    char name[50];
+    int ID;
+    int grades[10];
+    int numGrades;
+};
+
+// Function to calculate the average grade
+float calculateAverage(struct Student student) {
+    int sum = 0;
+    for (int i = 0; i < student.numGrades; i++) {
+        sum += student.grades[i];
+    }
+    return (float)sum / student.numGrades;
+}
+
+int main() {
+    // Create a student record
+    struct Student student;
+    
+    // Assign values to the student record
+    strcpy(student.name, "John Doe");
+    student.ID = 12345;
+    student.grades[0] = 85;
+    student.grades[1] = 90;
+    student.grades[2] = 78;
+    student.numGrades = 3;
+    
+    // Calculate the average grade
+    float average = calculateAverage(student);
+    
+    // Print the average grade
+    printf("Average grade for %s (ID: %d) is %.2f\n", student.name, student.ID, average);
+    
+    return 0;
+}
